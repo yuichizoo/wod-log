@@ -4,6 +4,8 @@ import react from '@vitejs/plugin-react';
 import { VitePWA } from 'vite-plugin-pwa';
 
 export default defineConfig({
+  // GitHub Pages (https://yuichizoo.github.io/wod-log/) 配信用のパス
+  base: '/wod-log/',
   plugins: [
     react(),
     VitePWA({
@@ -15,7 +17,8 @@ export default defineConfig({
         description: 'CrossFit トレーニングログ',
         lang: 'ja',
         display: 'standalone',
-        start_url: '/',
+        start_url: '/wod-log/',
+        scope: '/wod-log/',
         theme_color: '#111827',
         background_color: '#111827',
         icons: [
