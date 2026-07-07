@@ -25,18 +25,25 @@ npm run build     # 本番ビルド (dist/ に出力)
 npm run gen-icons # PWAアイコンの再生成
 ```
 
-## Cloudflare Pages へのデプロイ
+## 公開 (GitHub Pages)
 
-1. このリポジトリを GitHub にプッシュする
-2. [Cloudflare Pages](https://pages.cloudflare.com/) で「プロジェクトを作成」→ GitHub リポジトリを接続
-3. ビルド設定:
-   - **フレームワークプリセット**: Vite
-   - **ビルドコマンド**: `npm run build`
-   - **ビルド出力ディレクトリ**: `dist`
-4. デプロイ完了後、発行された URL を iPhone の Safari で開く
-5. 共有ボタン → **「ホーム画面に追加」** でアプリとしてインストール
+公開URL: **https://yuichizoo.github.io/wod-log/**
 
-以降はオフラインでも起動でき、更新は自動で反映されます(Service Worker の autoUpdate)。
+コードを修正したら、次のコマンドで再公開できます:
+
+```bash
+npm run deploy   # ビルドして gh-pages ブランチに公開
+```
+
+数分後に上記URLへ自動反映されます。インストール済みのPWAも次回起動時に自動更新されます。
+
+### iPhone へのインストール
+
+1. iPhone の **Safari** で https://yuichizoo.github.io/wod-log/ を開く
+2. 共有ボタン(□に↑)→ **「ホーム画面に追加」**
+3. ホーム画面の「WOD Log」アイコンから起動(全画面・オフライン対応)
+
+> 補足: Cloudflare Pages にデプロイする場合は、ビルドコマンド `npm run build`・出力 `dist` を指定し、`vite.config.ts` の `base` を `/` に戻してください。
 
 ## Claude APIキーの設定(任意)
 
